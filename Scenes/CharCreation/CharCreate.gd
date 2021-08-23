@@ -53,3 +53,6 @@ func changeTexture():
 		character += "_alt"
 	sprite.texture = sprites[character]
 	label.text = String(skin + 1)
+
+func _on_PlayButton_pressed():
+	get_tree().change_scene("res://Scenes/City/City.tscn")
