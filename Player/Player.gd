@@ -38,6 +38,10 @@ func move_state():
 		animationTree.set("parameters/Attack/blend_position", input)
 		animationState.travel("Run")
 		velocity = velocity.move_toward(input * WALK_SPEED, ACCELERATION)
+		if y < 0:
+			self.move_child($Sword, 0)
+		else:
+			self.move_child($Sword, self.get_child_count())
 	else:
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, ACCELERATION)
@@ -50,7 +54,6 @@ func move_state():
 func attack_state():
 	velocity = Vector2.ZERO
 	animationState.travel("Attack")
-
 
 func reset_state():
 	state = MOVE
