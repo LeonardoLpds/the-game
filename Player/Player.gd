@@ -50,7 +50,6 @@ func move_state():
 func attack_state():
 	velocity = Vector2.ZERO
 	animationState.travel("Attack")
-	$SlashWeapon/Sword/AnimationPlayer.play("Attack Down")
 
 
 func reset_state():
