@@ -73,7 +73,7 @@
 
 [node name="City" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Ground" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -84,5 +84,7 @@ tile_data = PoolIntArray( -393226, 0, 0, -393225, 0, 0, -393224, 0, 0, -393223, 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 40.6934, 87.2496 )
 
-[node name="Bar" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 139.426, 52.4455 )
+[node name="Houses" type="YSort" parent="YSort"]
+
+[node name="Bar" parent="YSort/Houses" instance=ExtResource( 1 )]
+position = Vector2( 137, 61 )
