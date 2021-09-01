@@ -877,6 +877,7 @@ graph_offset = Vector2( -281, 49 )
 
 [sub_resource type="CapsuleShape2D" id=52]
 radius = 9.0
+height = 18.7763
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
@@ -888,7 +889,7 @@ texture = ExtResource( 2 )
 flip_h = true
 hframes = 8
 vframes = 11
-frame = 3
+frame = 2
 
 [node name="WeaponSprite" type="Sprite" parent="."]
 visible = false
@@ -930,7 +931,7 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
-position = Vector2( 0, -10 )
+position = Vector2( 0, -8 )
 rotation = 1.5708
 
 [node name="Hitbox" parent="HitboxPivot" instance=ExtResource( 3 )]
