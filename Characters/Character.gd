@@ -13,7 +13,7 @@ export(int) var dex := 1
 
 # Attributes
 var max_hp
-onready var hp = max_hp setget set_hp
+var hp setget set_hp
 var attack setget set_atk
 
 # Signals
@@ -21,6 +21,7 @@ signal no_hp
 
 func _ready():
 	calc_attributes()
+	self.hp = max_hp
 
 # Sets and Gets
 func set_lvl(value):

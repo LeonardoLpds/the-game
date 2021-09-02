@@ -59,3 +59,7 @@ func set_weapon(new_weapon: Weapon):
 	weaponSprite.texture = weapon.texture
 	animationTree.set("parameters/Attack/Weapon/current", weapon.type)
 	self.attack += weapon.attack
+
+
+func _on_Hurtbox_area_entered(area):
+	hurt(area.damage if "damage" in area else 1)
