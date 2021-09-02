@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/weapons/Weapon.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/weapons/Iron Sword.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+id = 1
+name = "Iron Sword"
+texture = ExtResource( 2 )
+type = 0
+attack = 25
+level = 0

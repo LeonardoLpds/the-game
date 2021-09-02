@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "Weapon",
 "language": "GDScript",
-"path": "res://Weapons/Weapon.gd"
+"path": "res://src/weapons/Weapon.gd"
 } ]
 _global_script_class_icons={
 "Weapon": ""
@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The Game"
-run/main_scene="res://World/Scenes/Levels/GreenCity.tscn"
+run/main_scene="res://src/levels/GreenCity.tscn"
 config/icon="res://icon.png"
 
 [display]
