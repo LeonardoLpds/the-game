@@ -63,3 +63,7 @@ func set_weapon(new_weapon: Weapon):
 
 func _on_Hurtbox_area_entered(area):
 	hurt(area.damage if "damage" in area else 1)
+
+
+func _on_Player_no_hp():
+	queue_free()

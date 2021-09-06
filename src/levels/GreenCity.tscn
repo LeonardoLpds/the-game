@@ -4,7 +4,7 @@
 [ext_resource path="res://src/objects/Bar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/characters/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/objects/Grass.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/characters/enemies/scenes/LittleDemon.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/characters/enemies/Enemy.tscn" type="PackedScene" id=5]
 
 [sub_resource type="TileSet" id=1]
 0/name = "GrassBricks"
@@ -68,7 +68,7 @@ tile_data = PoolIntArray( -1, 0, 3, -65536, 0, 4, -65535, 0, 4, -65534, 0, 4, -6
 position = Vector2( 88, 88 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 154.5, 114 )
+position = Vector2( 96, 56 )
 
 [node name="Grass" type="YSort" parent="YSort"]
 
@@ -92,17 +92,20 @@ position = Vector2( 48, 168 )
 
 [node name="Enemies" type="YSort" parent="YSort"]
 
-[node name="LittleDemon" parent="YSort/Enemies" instance=ExtResource( 5 )]
-position = Vector2( 104, 128 )
+[node name="Enemy" parent="YSort/Enemies" instance=ExtResource( 5 )]
+position = Vector2( 88, 118 )
 
-[node name="LittleDemon2" parent="YSort/Enemies" instance=ExtResource( 5 )]
-position = Vector2( 40, 128 )
+[node name="Control" type="Control" parent="."]
+margin_right = 44.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="LittleDemon3" parent="YSort/Enemies" instance=ExtResource( 5 )]
-position = Vector2( 232, 40 )
-
-[node name="LittleDemon4" parent="YSort/Enemies" instance=ExtResource( 5 )]
-position = Vector2( 240, 144 )
-
-[node name="LittleDemon5" parent="YSort/Enemies" instance=ExtResource( 5 )]
-position = Vector2( 160, 96 )
+[node name="Label" type="Label" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "HP: 40"
+__meta__ = {
+"_edit_use_anchors_": false
+}

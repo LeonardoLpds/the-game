@@ -24,6 +24,10 @@ config/name="The Game"
 run/main_scene="res://src/levels/GreenCity.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Steering="*res://src/autoload/Steering.gd"
+
 [display]
 
 window/size/width=320

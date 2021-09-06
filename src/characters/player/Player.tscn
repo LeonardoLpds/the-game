@@ -892,6 +892,7 @@ vframes = 11
 frame = 2
 
 [node name="WeaponSprite" type="Sprite" parent="."]
+visible = false
 show_behind_parent = true
 position = Vector2( 0, -6 )
 hframes = 4
@@ -938,6 +939,7 @@ collision_mask = 8
 
 [node name="CollisionShape2D" parent="HitboxPivot/Hitbox" index="0"]
 shape = SubResource( 53 )
+disabled = true
 
 [node name="Hurtbox" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -10.2453 )
@@ -946,6 +948,7 @@ collision_layer = 4
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource( 54 )
 
+[connection signal="no_hp" from="." to="." method="_on_Player_no_hp"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="HitboxPivot/Hitbox"]
