@@ -1,8 +1,5 @@
 extends KinematicBody2D
 
-# Nodes
-onready var hitbox = find_node("Hitbox")
-
 # Stats
 export(int) var lvl := 1 setget set_lvl
 
@@ -18,6 +15,8 @@ var attack setget set_atk
 
 # Signals
 signal no_hp
+signal hurt
+signal attack_change
 
 func _ready():
 	calc_attributes()
@@ -39,14 +38,14 @@ func set_strg(value):
 
 func set_atk(value):
 	attack = value
-	if hitbox:
-		hitbox.set("damage", attack)
+	emit_signal("attack_change")
 
 func set_vit(value):
 	vit = value
 	calc_max_hp()
 
 func hurt(value):
+	emit_signal("hurt")
 	self.hp -= value
 
 # Calc Attributes

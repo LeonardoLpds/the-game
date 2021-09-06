@@ -4,7 +4,7 @@
 [ext_resource path="res://src/objects/Bar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/characters/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/objects/Grass.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/characters/enemies/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/characters/enemies/scenes/Warewolf.tscn" type="PackedScene" id=5]
 
 [sub_resource type="TileSet" id=1]
 0/name = "GrassBricks"
@@ -68,7 +68,7 @@ tile_data = PoolIntArray( -1, 0, 3, -65536, 0, 4, -65535, 0, 4, -65534, 0, 4, -6
 position = Vector2( 88, 88 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 96, 56 )
+position = Vector2( 63.8551, 146.085 )
 
 [node name="Grass" type="YSort" parent="YSort"]
 
@@ -92,8 +92,11 @@ position = Vector2( 48, 168 )
 
 [node name="Enemies" type="YSort" parent="YSort"]
 
-[node name="Enemy" parent="YSort/Enemies" instance=ExtResource( 5 )]
-position = Vector2( 88, 118 )
+[node name="Warewolf" parent="YSort/Enemies" instance=ExtResource( 5 )]
+position = Vector2( 225.197, 76.5519 )
+
+[node name="Warewolf2" parent="YSort/Enemies" instance=ExtResource( 5 )]
+position = Vector2( 278.651, 170.096 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 44.0

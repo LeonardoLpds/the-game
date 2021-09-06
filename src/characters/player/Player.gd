@@ -4,6 +4,7 @@ extends "res://src/characters/Character.gd"
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var weaponSprite = $WeaponSprite
+onready var hitbox = $HitboxPivot/Hitbox
 
 # State machine
 enum { MOVE, ATTACK }
@@ -26,7 +27,8 @@ func _physics_process(_delta):
 			move_state()
 		ATTACK:
 			attack_state()
-			
+
+# States
 func move_state():
 	var x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	var y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -54,16 +56,20 @@ func attack_state():
 func reset_state():
 	state = MOVE
 
+# Helpers
 func set_weapon(new_weapon: Weapon):
 	weapon = new_weapon
 	weaponSprite.texture = weapon.texture
 	animationTree.set("parameters/Attack/Weapon/current", weapon.type)
 	self.attack += weapon.attack
-
-
-func _on_Hurtbox_area_entered(area):
-	hurt(area.damage if "damage" in area else 1)
-
-
+	
+# Signals
 func _on_Player_no_hp():
 	queue_free()
+
+func _on_Player_attack_change():
+	if hitbox:
+		hitbox.damage = self.attack
+
+func _on_Player_hurt():
+	print("Player hurt")

@@ -948,8 +948,9 @@ collision_layer = 4
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource( 54 )
 
+[connection signal="attack_change" from="." to="." method="_on_Player_attack_change"]
+[connection signal="hurt" from="." to="." method="_on_Player_hurt"]
 [connection signal="no_hp" from="." to="." method="_on_Player_no_hp"]
-[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="HitboxPivot/Hitbox"]
 [editable path="Hurtbox"]
