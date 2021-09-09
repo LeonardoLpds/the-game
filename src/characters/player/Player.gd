@@ -7,7 +7,7 @@ onready var weaponSprite = $WeaponSprite
 onready var hitbox = $HitboxPivot/Hitbox
 
 # State machine
-enum { MOVE, ATTACK }
+enum { MOVE, ATTACK, HURT }
 var state = MOVE
 
 # Move variables
@@ -27,6 +27,8 @@ func _physics_process(_delta):
 			move_state()
 		ATTACK:
 			attack_state()
+		HURT:
+			hurt_state()
 
 # States
 func move_state():
@@ -38,7 +40,7 @@ func move_state():
 	
 	if input != Vector2.ZERO:
 		animationState.travel("Run")
-		for animation in ["Idle", "Run"]:
+		for animation in ["Idle", "Run", "Hurt"]:
 			animationTree.set("parameters/"+animation+"/blend_position", input)
 		
 		if (weapon):
@@ -55,6 +57,10 @@ func attack_state():
 	
 func reset_state():
 	state = MOVE
+
+func hurt_state():
+	velocity = Vector2.ZERO
+	animationState.travel("Hurt")
 
 # Helpers
 func set_weapon(new_weapon: Weapon):
@@ -74,4 +80,4 @@ func _set_hitbox_damage():
 	hitbox.damage = self.attack
 
 func _on_Player_hurt():
-	pass
+	state = HURT

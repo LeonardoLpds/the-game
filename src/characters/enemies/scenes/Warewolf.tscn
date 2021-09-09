@@ -7,7 +7,7 @@
 radius = 1.41478
 height = 7.9318
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=2]
 resource_name = "Attack"
 length = 0.4
 tracks/0/type = "value"
@@ -49,7 +49,7 @@ tracks/2/keys = {
 "values": [ 6, 2 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=3]
 resource_name = "Die"
 length = 0.6
 tracks/0/type = "value"
@@ -65,7 +65,7 @@ tracks/0/keys = {
 "values": [ 32, 32, 33, 34, 35 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=4]
 resource_name = "Hurt"
 length = 0.2
 tracks/0/type = "value"
@@ -142,16 +142,16 @@ position = Vector2( 0, -7.5 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 5
-frame = 19
+frame = 16
 
 [node name="CollisionShape2D" parent="." index="1"]
 rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" parent="." index="4"]
-anims/Attack = SubResource( 9 )
-anims/Die = SubResource( 10 )
-anims/Hurt = SubResource( 11 )
+anims/Attack = SubResource( 2 )
+anims/Die = SubResource( 3 )
+anims/Hurt = SubResource( 4 )
 anims/Idle = SubResource( 5 )
 anims/Walk = SubResource( 6 )
 
