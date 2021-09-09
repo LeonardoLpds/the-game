@@ -889,7 +889,7 @@ texture = ExtResource( 2 )
 flip_h = true
 hframes = 8
 vframes = 11
-frame = 2
+frame = 3
 
 [node name="WeaponSprite" type="Sprite" parent="."]
 visible = false

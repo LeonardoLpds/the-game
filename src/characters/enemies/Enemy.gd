@@ -5,6 +5,7 @@ onready var wanderController = $WanderController
 onready var animationPlayer = $AnimationPlayer
 onready var sprite = $Sprite
 onready var hitbox = $HitboxPivot/Hitbox
+onready var hurtbox = $Hurtbox
 onready var pivot = $HitboxPivot
 
 # Attributes
@@ -79,6 +80,9 @@ func hurt_state():
 
 func die_state():
 	set_physics_process(false)
+	hitbox.get_node("CollisionShape2D").disabled = true
+	hurtbox.get_node("CollisionShape2D").disabled = true
+	
 	velocity = velocity.move_toward(Vector2.ZERO, acceleration)
 	animationPlayer.play("Die")
 	
@@ -106,3 +110,9 @@ func _on_Enemy_no_hp():
 
 func _on_Enemy_hurt():
 	state = HURT
+
+func _on_Enemy_attack_change():
+	call_deferred("_set_hitbox_damage")
+
+func _set_hitbox_damage():
+	hitbox.damage = self.attack

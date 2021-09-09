@@ -7,7 +7,7 @@
 radius = 1.41478
 height = 7.9318
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=9]
 resource_name = "Attack"
 length = 0.4
 tracks/0/type = "value"
@@ -49,7 +49,7 @@ tracks/2/keys = {
 "values": [ 6, 2 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=10]
 resource_name = "Die"
 length = 0.6
 tracks/0/type = "value"
@@ -65,7 +65,7 @@ tracks/0/keys = {
 "values": [ 32, 32, 33, 34, 35 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=11]
 resource_name = "Hurt"
 length = 0.2
 tracks/0/type = "value"
@@ -95,8 +95,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Idle"
+[sub_resource type="Animation" id=5]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -112,8 +111,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Walk"
+[sub_resource type="Animation" id=6]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -129,7 +127,7 @@ tracks/0/keys = {
 "values": [ 8, 9, 10, 11, 12, 13, 14, 15 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 6.03378
 height = 7.59556
 
@@ -151,15 +149,15 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" parent="." index="4"]
-anims/Attack = SubResource( 7 )
-anims/Die = SubResource( 6 )
-anims/Hurt = SubResource( 5 )
-anims/Idle = SubResource( 2 )
-anims/Walk = SubResource( 3 )
+anims/Attack = SubResource( 9 )
+anims/Die = SubResource( 10 )
+anims/Hurt = SubResource( 11 )
+anims/Idle = SubResource( 5 )
+anims/Walk = SubResource( 6 )
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0, -7.5 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="HitboxPivot" parent="." index="6"]
 position = Vector2( 0, -7.5 )

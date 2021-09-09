@@ -12,6 +12,7 @@ export(int) var dex := 1
 var max_hp
 var hp setget set_hp
 var attack setget set_atk
+var def := 0.0
 
 # Signals
 signal no_hp
@@ -45,8 +46,11 @@ func set_vit(value):
 	calc_max_hp()
 
 func hurt(value):
-	emit_signal("hurt")
-	self.hp -= value
+	var damage = value * ((4000 + def) / (4000 + def * 10))
+	self.hp -= damage
+	if (self.hp > 0):
+		emit_signal("hurt")
+	return damage
 
 # Calc Attributes
 func calc_attributes():

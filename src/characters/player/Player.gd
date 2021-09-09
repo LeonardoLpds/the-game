@@ -68,8 +68,10 @@ func _on_Player_no_hp():
 	queue_free()
 
 func _on_Player_attack_change():
-	if hitbox:
-		hitbox.damage = self.attack
+	call_deferred("_set_hitbox_damage");
+
+func _set_hitbox_damage():
+	hitbox.damage = self.attack
 
 func _on_Player_hurt():
-	print("Player hurt")
+	pass
