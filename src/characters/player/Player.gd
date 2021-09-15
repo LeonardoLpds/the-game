@@ -7,7 +7,7 @@ onready var weaponSprite = $WeaponSprite
 onready var hitbox = $HitboxPivot/Hitbox
 
 # State machine
-enum { MOVE, ATTACK, HURT }
+enum { MOVE, ATTACK, HURT, DIE }
 var state = MOVE
 
 # Move variables
@@ -16,10 +16,7 @@ const ACCELERATION = 15
 var velocity = Vector2.ZERO
 
 # Equips
-var weapon: Weapon setget set_weapon
-
-func _ready():
-	self.weapon = load("res://assets/art/weapons/Iron Sword.tres")
+export(Resource) var weapon setget set_weapon
 
 func _physics_process(_delta):
 	match state:
@@ -29,6 +26,8 @@ func _physics_process(_delta):
 			attack_state()
 		HURT:
 			hurt_state()
+		DIE:
+			die_state()
 
 # States
 func move_state():
@@ -42,6 +41,7 @@ func move_state():
 		animationState.travel("Run")
 		for animation in ["Idle", "Run", "Hurt"]:
 			animationTree.set("parameters/"+animation+"/blend_position", input)
+		animationTree.set("parameters/Die/blend_position", input.x)
 		
 		if (weapon):
 			animationTree.set("parameters/Attack/"+str(weapon.type)+"/blend_position", input)
@@ -62,8 +62,16 @@ func hurt_state():
 	velocity = Vector2.ZERO
 	animationState.travel("Hurt")
 
+func die_state():
+	velocity = Vector2.ZERO
+	set_physics_process(false)
+	animationState.travel("Die")
+
 # Helpers
 func set_weapon(new_weapon: Weapon):
+	call_deferred("_set_weapon", new_weapon)
+
+func _set_weapon(new_weapon):
 	weapon = new_weapon
 	weaponSprite.texture = weapon.texture
 	animationTree.set("parameters/Attack/Weapon/current", weapon.type)
@@ -71,7 +79,7 @@ func set_weapon(new_weapon: Weapon):
 	
 # Signals
 func _on_Player_no_hp():
-	queue_free()
+	state = DIE
 
 func _on_Player_attack_change():
 	call_deferred("_set_hitbox_damage");

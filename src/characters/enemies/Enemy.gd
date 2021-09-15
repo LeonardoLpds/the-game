@@ -47,7 +47,7 @@ func _physics_process(_delta):
 	
 # States
 func idle_state():
-	$AnimationPlayer.play("Idle")
+	animationPlayer.play("Idle")
 	velocity = velocity.move_toward(Vector2.ZERO, acceleration)
 
 func wander_state():
@@ -56,14 +56,14 @@ func wander_state():
 		acceleration
 	)
 	if velocity != Vector2.ZERO:
-		$AnimationPlayer.play("Walk")
+		animationPlayer.play("Walk")
 	else:
-		$AnimationPlayer.play("Idle")
+		animationPlayer.play("Idle")
 	
 	
 func chase_state():
 	if playerDetection.is_player_in_range():
-		$AnimationPlayer.play("Walk")
+		animationPlayer.play("Walk")
 		velocity = velocity.move_toward(
 			Steering.seek(velocity, global_position, playerDetection.player.global_position, walk_speed, [self, playerDetection.player]),
 			acceleration
@@ -85,10 +85,15 @@ func die_state():
 	
 	velocity = velocity.move_toward(Vector2.ZERO, acceleration)
 	animationPlayer.play("Die")
+	yield(animationPlayer, "animation_finished")
+	if has_node("Loot"):
+		get_node("Loot").dropLoot()
+	queue_free()
+	
 	
 func attack_state():
 	velocity = velocity.move_toward(Vector2.ZERO, acceleration)
-	$AnimationPlayer.play("Attack")
+	animationPlayer.play("Attack")
 
 # Helpers
 func set_random_state(list: Array):
