@@ -5,7 +5,7 @@
 [ext_resource path="res://src/characters/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/objects/Grass.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/characters/enemies/scenes/Warewolf.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/ui/UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/ui/GUI.tscn" type="PackedScene" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "GrassBricks"
@@ -99,4 +99,4 @@ position = Vector2( 225.197, 76.5519 )
 [node name="Warewolf2" parent="YSort/Enemies" instance=ExtResource( 5 )]
 position = Vector2( 278.651, 170.096 )
 
-[node name="UI" parent="." instance=ExtResource( 6 )]
+[node name="GUI" parent="." instance=ExtResource( 6 )]

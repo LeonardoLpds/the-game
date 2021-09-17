@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource( 1 )
-inventory_size = 8
+inventory_size = 12

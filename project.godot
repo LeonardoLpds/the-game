@@ -9,10 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Resource",
-"class": "Equipaments",
+"base": "Node",
+"class": "BaseInventory",
 "language": "GDScript",
-"path": "res://src/items/Equipments.gd"
+"path": "res://src/ui/iventory/BaseInventory.gd"
 }, {
 "base": "Resource",
 "class": "Inventory",
@@ -30,7 +30,7 @@ _global_script_classes=[ {
 "path": "res://src/weapons/Weapon.gd"
 } ]
 _global_script_class_icons={
-"Equipaments": "",
+"BaseInventory": "",
 "Inventory": "",
 "Item": "",
 "Weapon": ""

@@ -1,0 +1,168 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/art/ui/invetory/equips_bg.png" type="Texture" id=1]
+[ext_resource path="res://src/ui/iventory/scenes/Slot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/art/ui/invetory/backpack_bg.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/ui/invetory/head_slot.png" type="Texture" id=4]
+[ext_resource path="res://src/characters/player/PlayerEquips.tres" type="Resource" id=5]
+[ext_resource path="res://src/ui/iventory/scenes/BackpackGrid.gd" type="Script" id=6]
+[ext_resource path="res://assets/art/ui/invetory/offhand_slot.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/ui/invetory/chest_slot.png" type="Texture" id=8]
+[ext_resource path="res://assets/art/ui/invetory/mainhand_slot.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/ui/invetory/acessory_slot.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/ui/invetory/foot_slot.png" type="Texture" id=11]
+[ext_resource path="res://src/ui/iventory/scenes/EquipsContainer.gd" type="Script" id=12]
+[ext_resource path="res://src/characters/player/PlayerBag.tres" type="Resource" id=13]
+
+[node name="Inventory" type="HBoxContainer"]
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Equips" type="TextureRect" parent="."]
+margin_right = 66.0
+margin_bottom = 107.0
+texture = ExtResource( 1 )
+stretch_mode = 6
+
+[node name="EquipsContainer" type="VBoxContainer" parent="Equips"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -32.5
+margin_right = 31.0
+margin_bottom = 32.5
+custom_constants/separation = 1
+alignment = 1
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+inventory = ExtResource( 5 )
+
+[node name="TopContainer" type="HBoxContainer" parent="Equips/EquipsContainer"]
+margin_top = 3.0
+margin_right = 62.0
+margin_bottom = 22.0
+alignment = 1
+
+[node name="HeadSlot" parent="Equips/EquipsContainer/TopContainer" instance=ExtResource( 2 )]
+margin_left = 22.0
+margin_right = 40.0
+inventory = ExtResource( 5 )
+
+[node name="SlotTexture" parent="Equips/EquipsContainer/TopContainer/HeadSlot" index="0"]
+texture = ExtResource( 4 )
+
+[node name="MidleContainer" type="HBoxContainer" parent="Equips/EquipsContainer"]
+margin_top = 23.0
+margin_right = 62.0
+margin_bottom = 42.0
+custom_constants/separation = 1
+alignment = 1
+
+[node name="OffhandSlot" parent="Equips/EquipsContainer/MidleContainer" instance=ExtResource( 2 )]
+margin_left = 3.0
+margin_right = 21.0
+index = 1
+inventory = ExtResource( 5 )
+
+[node name="SlotTexture" parent="Equips/EquipsContainer/MidleContainer/OffhandSlot" index="0"]
+texture = ExtResource( 7 )
+
+[node name="ChestSlot" parent="Equips/EquipsContainer/MidleContainer" instance=ExtResource( 2 )]
+margin_left = 22.0
+margin_right = 40.0
+index = 2
+inventory = ExtResource( 5 )
+
+[node name="SlotTexture" parent="Equips/EquipsContainer/MidleContainer/ChestSlot" index="0"]
+texture = ExtResource( 8 )
+
+[node name="MainhandSlot" parent="Equips/EquipsContainer/MidleContainer" instance=ExtResource( 2 )]
+margin_left = 41.0
+margin_right = 59.0
+index = 3
+inventory = ExtResource( 5 )
+
+[node name="SlotTexture" parent="Equips/EquipsContainer/MidleContainer/MainhandSlot" index="0"]
+texture = ExtResource( 9 )
+
+[node name="BottomContainer" type="HBoxContainer" parent="Equips/EquipsContainer"]
+margin_top = 43.0
+margin_right = 62.0
+margin_bottom = 62.0
+custom_constants/separation = 1
+alignment = 1
+
+[node name="Accessory1Slot" parent="Equips/EquipsContainer/BottomContainer" instance=ExtResource( 2 )]
+margin_left = 3.0
+margin_right = 21.0
+index = 4
+inventory = ExtResource( 5 )
+
+[node name="SlotTexture" parent="Equips/EquipsContainer/BottomContainer/Accessory1Slot" index="0"]
+texture = ExtResource( 10 )
+
+[node name="FootSlot" parent="Equips/EquipsContainer/BottomContainer" instance=ExtResource( 2 )]
+margin_left = 22.0
+margin_right = 40.0
+index = 5
+inventory = ExtResource( 5 )
+
+[node name="SlotTexture" parent="Equips/EquipsContainer/BottomContainer/FootSlot" index="0"]
+texture = ExtResource( 11 )
+
+[node name="Accessory2Slot" parent="Equips/EquipsContainer/BottomContainer" instance=ExtResource( 2 )]
+margin_left = 41.0
+margin_right = 59.0
+index = 6
+inventory = ExtResource( 5 )
+
+[node name="SlotTexture" parent="Equips/EquipsContainer/BottomContainer/Accessory2Slot" index="0"]
+texture = ExtResource( 10 )
+
+[node name="Backpack" type="TextureRect" parent="."]
+margin_left = 76.0
+margin_right = 167.0
+margin_bottom = 107.0
+texture = ExtResource( 3 )
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="Backpack"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -38.5
+margin_top = -34.5
+margin_right = 38.5
+margin_bottom = 24.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackpackGrid" type="GridContainer" parent="Backpack/CenterContainer"]
+margin_left = 38.0
+margin_top = 29.0
+margin_right = 38.0
+margin_bottom = 29.0
+custom_constants/vseparation = 1
+custom_constants/hseparation = 1
+columns = 4
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+inventory = ExtResource( 13 )
+
+[editable path="Equips/EquipsContainer/TopContainer/HeadSlot"]
+[editable path="Equips/EquipsContainer/MidleContainer/OffhandSlot"]
+[editable path="Equips/EquipsContainer/MidleContainer/ChestSlot"]
+[editable path="Equips/EquipsContainer/MidleContainer/MainhandSlot"]
+[editable path="Equips/EquipsContainer/BottomContainer/Accessory1Slot"]
+[editable path="Equips/EquipsContainer/BottomContainer/FootSlot"]
+[editable path="Equips/EquipsContainer/BottomContainer/Accessory2Slot"]

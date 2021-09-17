@@ -1,16 +1,7 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=2 format=2]
 
-[ext_resource path="res://src/items/Equipments.gd" type="Script" id=1]
-[ext_resource path="res://src/items/Item.gd" type="Script" id=2]
+[ext_resource path="res://src/items/Inventory.gd" type="Script" id=1]
 
 [resource]
 script = ExtResource( 1 )
-equips = {
-"acessory1": ExtResource( 2 ),
-"acessory2": ExtResource( 2 ),
-"chest": ExtResource( 2 ),
-"feet": ExtResource( 2 ),
-"head": ExtResource( 2 ),
-"mainhand": ExtResource( 2 ),
-"offhand": ExtResource( 2 )
-}
+inventory_size = 7

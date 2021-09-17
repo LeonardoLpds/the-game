@@ -1,8 +1,7 @@
 extends Resource
 class_name Inventory
 
-
-export(int) var inventory_size := 8
+export(int) var inventory_size := 8 setget change_size
 var items := []
 var drag_data = null
 
@@ -11,9 +10,11 @@ signal items_changed(indexes)
 func _init():
 	items.resize(inventory_size)
 
+func change_size(size: int):
+	inventory_size = size
+	items.resize(size)
+
 func set_item(item_index: int, item: Item):
-	print("set")
-	print(item)
 	var previous_item = items[item_index]
 	items[item_index] = item
 	emit_signal("items_changed", [item_index])
@@ -25,6 +26,10 @@ func swap_items(item_index: int, target_index: int):
 	items[target_index] = item
 	items[item_index] = target_item
 	emit_signal("items_changed", [item_index, target_index])
+	
+func add_item_quantity(item_index: int, amount: int):
+	items[item_index].amount += amount
+	emit_signal("items_changed", [item_index])
 
 func remove_item(item_index: int):
 	return set_item(item_index, null)

@@ -17,6 +17,7 @@ var velocity = Vector2.ZERO
 
 # Equips
 export(Resource) var weapon setget set_weapon
+export(Resource) var equips
 
 func _physics_process(_delta):
 	match state:
