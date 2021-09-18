@@ -1,4 +1,4 @@
-[
-  {"id": 1, "name": "meat"},
-  {"id": 2, "name": "tail"}
-]
+{
+  "BoVqkBaHQb7k7x4uEYgy": {"name": "leather", "price": 6, "type": 0, "stackable": true},
+  "YAAi86AWspYOhT6boW1r": {"name": "iron sword", "price": 100, "type": 1, "stackable": false, "attack": 25, "level": 1}
+}

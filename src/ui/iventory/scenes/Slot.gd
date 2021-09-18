@@ -12,7 +12,7 @@ func display(item: Item) -> void:
 		label.text = '';
 	else:
 		item_texture.texture = item.texture
-		label.text = str(item.amount);
+		label.text = str(item.amount) if item.stackable else ''
 
 func get_drag_data(_position: Vector2):
 	var item = inventory.remove_item(index)
@@ -24,14 +24,14 @@ func get_drag_data(_position: Vector2):
 		inventory.drag_data = data
 		return data
 
-func can_drop_data(position: Vector2, data) -> bool:
+func can_drop_data(_position: Vector2, data) -> bool:
 	return data is Dictionary and data.has("item")
 
-func drop_data(position: Vector2, data) -> void:
+func drop_data(_position: Vector2, data) -> void:
 	var my_item = inventory.items[index]
-	if my_item is Item and my_item.id == data.item.id:
+	if my_item is Item and my_item.id == data.item.id and my_item.stackable:
 		inventory.add_item_quantity(index, data.item.amount)
 	else:
-		inventory.set_item(index, data.item)
 		data.inventory.set_item(data.item_index, my_item)
+		inventory.set_item(index, data.item)
 	data.inventory.drag_data = null

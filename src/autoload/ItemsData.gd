@@ -1,6 +1,6 @@
 extends Node
 
-var items = []
+var items = {}
 
 func _ready():
 	var file = File.new()

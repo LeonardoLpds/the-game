@@ -15,7 +15,7 @@ func _update_slot(item_index: int):
 	var item = inventory.items[item_index]
 	slot.display(item)
 	
-func _get_slot(index: int):
+func _get_slot(_index: int):
 	pass
 
 func _update_all_slots() ->void:

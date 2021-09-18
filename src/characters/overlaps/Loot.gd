@@ -1,6 +1,6 @@
 extends Position2D
 
-export(int) var item_id := 1
+export(String) var item_id := "BoVqkBaHQb7k7x4uEYgy"
 var item_scene = preload("res://src/items/scenes/Item.tscn")
 
 func dropLoot():

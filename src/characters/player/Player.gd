@@ -16,8 +16,18 @@ const ACCELERATION = 15
 var velocity = Vector2.ZERO
 
 # Equips
-export(Resource) var weapon setget set_weapon
+var weapon: Item setget set_weapon
 export(Resource) var equips
+
+func _ready() -> void:
+	equips.connect("items_changed", self, "_on_equip_changed")
+	equips.set_item(3, Item.new("YAAi86AWspYOhT6boW1r"))
+	
+func _on_equip_changed(indexes: Array) -> void:
+	if (indexes.has(3)):
+		self.weapon = equips.items[3]
+		
+	
 
 func _physics_process(_delta):
 	match state:
@@ -69,14 +79,19 @@ func die_state():
 	animationState.travel("Die")
 
 # Helpers
-func set_weapon(new_weapon: Weapon):
+func set_weapon(new_weapon):
 	call_deferred("_set_weapon", new_weapon)
 
 func _set_weapon(new_weapon):
 	weapon = new_weapon
-	weaponSprite.texture = weapon.texture
-	animationTree.set("parameters/Attack/Weapon/current", weapon.type)
-	self.attack += weapon.attack
+	if (weapon is Item):
+		weaponSprite.texture = weapon.animation
+		animationTree.set("parameters/Attack/Weapon/current", weapon.type - 1)
+	else:
+		weaponSprite.texture = null
+		animationTree.set("parameters/Attack/Weapon/current", null)
+	_set_hitbox_damage()
+	
 	
 # Signals
 func _on_Player_no_hp():
@@ -86,7 +101,7 @@ func _on_Player_attack_change():
 	call_deferred("_set_hitbox_damage");
 
 func _set_hitbox_damage():
-	hitbox.damage = self.attack
+	hitbox.damage = self.attack + weapon.attack if weapon else 0
 
 func _on_Player_hurt():
 	state = HURT

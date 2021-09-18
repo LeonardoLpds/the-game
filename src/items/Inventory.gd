@@ -28,8 +28,9 @@ func swap_items(item_index: int, target_index: int):
 	emit_signal("items_changed", [item_index, target_index])
 	
 func add_item_quantity(item_index: int, amount: int):
-	items[item_index].amount += amount
-	emit_signal("items_changed", [item_index])
+	if items[item_index].stackable:
+		items[item_index].amount += amount
+		emit_signal("items_changed", [item_index])
 
 func remove_item(item_index: int):
 	return set_item(item_index, null)
@@ -40,7 +41,7 @@ func add_item(item: Item):
 			items[item_index] = item
 			emit_signal("items_changed", [item_index])
 			return true
-		elif items[item_index].id == item.id:
+		elif items[item_index].id == item.id and items[item_index].stackable:
 			items[item_index].amount += item.amount
 			emit_signal("items_changed", [item_index])
 			return true

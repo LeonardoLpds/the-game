@@ -1,10 +1,9 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://src/characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/player/Hero.png" type="Texture" id=2]
 [ext_resource path="res://src/characters/overlaps/Hitbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/characters/overlaps/Hurtbox.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/art/weapons/Iron Sword.tres" type="Resource" id=5]
 [ext_resource path="res://src/characters/player/PlayerEquips.tres" type="Resource" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -1053,19 +1052,19 @@ input_3/name = "Spear"
 input_3/auto_advance = false
 
 [sub_resource type="AnimationNodeBlendTree" id=41]
-graph_offset = Vector2( -232, -213 )
-nodes/0/node = SubResource( 24 )
-nodes/0/position = Vector2( -160, -340 )
-nodes/1/node = SubResource( 29 )
-nodes/1/position = Vector2( -160, -180 )
-nodes/2/node = SubResource( 34 )
-nodes/2/position = Vector2( -160, -20 )
-nodes/3/node = SubResource( 39 )
-nodes/3/position = Vector2( -160, 140 )
+graph_offset = Vector2( -349, -274 )
+nodes/1/node = SubResource( 24 )
+nodes/1/position = Vector2( -160, -340 )
+nodes/2/node = SubResource( 29 )
+nodes/2/position = Vector2( -160, -180 )
+nodes/3/node = SubResource( 34 )
+nodes/3/position = Vector2( -160, -20 )
+nodes/4/node = SubResource( 39 )
+nodes/4/position = Vector2( -160, 140 )
 nodes/Weapon/node = SubResource( 40 )
 nodes/Weapon/position = Vector2( 220, -200 )
 nodes/output/position = Vector2( 440, -120 )
-node_connections = [ "output", 0, "Weapon", "Weapon", 0, "0", "Weapon", 1, "1", "Weapon", 2, "2", "Weapon", 3, "3" ]
+node_connections = [ "output", 0, "Weapon", "Weapon", 0, "1", "Weapon", 1, "2", "Weapon", 2, "3", "Weapon", 3, "4" ]
 
 [sub_resource type="AnimationNodeAnimation" id=42]
 animation = "Die Left"
@@ -1172,7 +1171,7 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachine" id=67]
 states/Attack/node = SubResource( 41 )
-states/Attack/position = Vector2( 40, 256 )
+states/Attack/position = Vector2( 40, 257 )
 states/Die/node = SubResource( 44 )
 states/Die/position = Vector2( 40, 54 )
 states/Hurt/node = SubResource( 49 )
@@ -1200,7 +1199,6 @@ height = 12.0449
 ]]
 collision_layer = 2
 script = ExtResource( 1 )
-weapon = ExtResource( 5 )
 equips = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -1214,9 +1212,10 @@ frame = 3
 [node name="WeaponSprite" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, -7 )
+flip_h = true
 hframes = 4
 vframes = 3
-frame = 4
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -1247,10 +1246,10 @@ tree_root = SubResource( 67 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 68 )
-parameters/Attack/0/blend_position = Vector2( 0, 0 )
 parameters/Attack/1/blend_position = Vector2( 0, 0 )
 parameters/Attack/2/blend_position = Vector2( 0, 0 )
 parameters/Attack/3/blend_position = Vector2( 0, 0 )
+parameters/Attack/4/blend_position = Vector2( 0, 0 )
 parameters/Attack/Weapon/current = 0
 parameters/Die/blend_position = 0
 parameters/Hurt/blend_position = Vector2( 0, 0 )
@@ -1259,7 +1258,6 @@ parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 position = Vector2( 0, -8 )
-rotation = 4.71239
 
 [node name="Hitbox" parent="HitboxPivot" instance=ExtResource( 3 )]
 position = Vector2( -14, 0 )
