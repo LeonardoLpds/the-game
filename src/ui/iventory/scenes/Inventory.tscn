@@ -53,6 +53,7 @@ alignment = 1
 margin_left = 22.0
 margin_right = 40.0
 inventory = ExtResource( 5 )
+type_restriction = 99
 
 [node name="SlotTexture" parent="Equips/EquipsContainer/TopContainer/HeadSlot" index="0"]
 texture = ExtResource( 4 )
@@ -69,6 +70,7 @@ margin_left = 3.0
 margin_right = 21.0
 index = 1
 inventory = ExtResource( 5 )
+type_restriction = 99
 
 [node name="SlotTexture" parent="Equips/EquipsContainer/MidleContainer/OffhandSlot" index="0"]
 texture = ExtResource( 7 )
@@ -78,6 +80,7 @@ margin_left = 22.0
 margin_right = 40.0
 index = 2
 inventory = ExtResource( 5 )
+type_restriction = 99
 
 [node name="SlotTexture" parent="Equips/EquipsContainer/MidleContainer/ChestSlot" index="0"]
 texture = ExtResource( 8 )
@@ -87,6 +90,7 @@ margin_left = 41.0
 margin_right = 59.0
 index = 3
 inventory = ExtResource( 5 )
+type_restriction = 1
 
 [node name="SlotTexture" parent="Equips/EquipsContainer/MidleContainer/MainhandSlot" index="0"]
 texture = ExtResource( 9 )
@@ -103,6 +107,7 @@ margin_left = 3.0
 margin_right = 21.0
 index = 4
 inventory = ExtResource( 5 )
+type_restriction = 99
 
 [node name="SlotTexture" parent="Equips/EquipsContainer/BottomContainer/Accessory1Slot" index="0"]
 texture = ExtResource( 10 )
@@ -112,6 +117,7 @@ margin_left = 22.0
 margin_right = 40.0
 index = 5
 inventory = ExtResource( 5 )
+type_restriction = 99
 
 [node name="SlotTexture" parent="Equips/EquipsContainer/BottomContainer/FootSlot" index="0"]
 texture = ExtResource( 11 )
@@ -121,6 +127,7 @@ margin_left = 41.0
 margin_right = 59.0
 index = 6
 inventory = ExtResource( 5 )
+type_restriction = 99
 
 [node name="SlotTexture" parent="Equips/EquipsContainer/BottomContainer/Accessory2Slot" index="0"]
 texture = ExtResource( 10 )

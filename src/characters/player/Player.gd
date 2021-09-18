@@ -101,7 +101,7 @@ func _on_Player_attack_change():
 	call_deferred("_set_hitbox_damage");
 
 func _set_hitbox_damage():
-	hitbox.damage = self.attack + weapon.attack if weapon else 0
+	hitbox.damage = self.attack + (weapon.attack if weapon else 0)
 
 func _on_Player_hurt():
 	state = HURT

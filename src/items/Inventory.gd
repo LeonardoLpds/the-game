@@ -20,13 +20,6 @@ func set_item(item_index: int, item: Item):
 	emit_signal("items_changed", [item_index])
 	return previous_item
 	
-func swap_items(item_index: int, target_index: int):
-	var target_item = items[target_index]
-	var item = items[item_index]
-	items[target_index] = item
-	items[item_index] = target_item
-	emit_signal("items_changed", [item_index, target_index])
-	
 func add_item_quantity(item_index: int, amount: int):
 	if items[item_index].stackable:
 		items[item_index].amount += amount
