@@ -21,7 +21,7 @@ export(Resource) var equips
 
 func _ready() -> void:
 	equips.connect("items_changed", self, "_on_equip_changed")
-	equips.set_item(3, Item.new("YAAi86AWspYOhT6boW1r"))
+	#equips.set_item(3, Item.new("YAAi86AWspYOhT6boW1r"))
 	
 func _on_equip_changed(indexes: Array) -> void:
 	if (indexes.has(3)):
@@ -59,7 +59,7 @@ func move_state():
 	else:
 		animationState.travel("Idle")
 		
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and weapon:
 		state = ATTACK
 
 func attack_state():
@@ -80,12 +80,9 @@ func die_state():
 
 # Helpers
 func set_weapon(new_weapon):
-	call_deferred("_set_weapon", new_weapon)
-
-func _set_weapon(new_weapon):
 	weapon = new_weapon
 	if (weapon is Item):
-		weaponSprite.texture = weapon.animation
+		weaponSprite.set_texture(weapon.animation)
 		animationTree.set("parameters/Attack/Weapon/current", weapon.type - 1)
 	else:
 		weaponSprite.texture = null

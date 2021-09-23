@@ -9,6 +9,8 @@ func _ready() -> void:
 		slot_instance.index = get_child_count()
 		add_child(slot_instance)
 	._update_all_slots()
+	inventory.add_item(Item.new("XiQqkxrEFJqNjY7rhz9A"))
+	inventory.add_item(Item.new("YAAi86AWspYOhT6boW1r"))
 
 func _get_slot(index: int):
 	return get_child(index)

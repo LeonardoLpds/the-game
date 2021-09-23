@@ -1,7 +1,7 @@
 extends Resource
 class_name Item
 
-enum TYPE { MISC, OSWORD, TSWORD, AXE, SPEAR }
+enum TYPE { MISC, SWORD, AXE, BOW, STAFF, HEADGEAR, ARMOR, OFFHAND, ACESSORY, FOOTGEAR }
 
 export(String) var id
 export(String) var name

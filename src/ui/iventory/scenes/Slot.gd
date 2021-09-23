@@ -5,7 +5,7 @@ onready var label = $Control/Label
 
 export(int) var index := 0
 export(Resource) var inventory
-export(int) var type_restriction
+export(Item.TYPE, FLAGS) var type_restriction
 
 func display(item: Item) -> void:
 	if item == null:
@@ -27,20 +27,23 @@ func get_drag_data(_position: Vector2):
 
 func can_drop_data(_position: Vector2, data) -> bool:
 	if data is Dictionary and data.has("item"):
-		if !type_restriction:
-			return true
-		if data.item.type == type_restriction:
-			return true
+		var my_item = inventory.items[index]
+		return _check_type(data.item.type) \
+			and (_check_type(my_item.type, data.type_restriction) if my_item else true)
 	return false
 
 func drop_data(_position: Vector2, data) -> void:
 	var my_item = inventory.items[index]
+	
 	if my_item is Item and my_item.id == data.item.id and my_item.stackable:
 		inventory.add_item_quantity(index, data.item.amount)
 	else:
-		if my_item is Item and data.type_restriction && data.item.type != type_restriction:
-			return
-		else:
-			data.inventory.set_item(data.item_index, my_item)
+		data.inventory.set_item(data.item_index, my_item)
 		inventory.set_item(index, data.item)
+
 	data.inventory.drag_data = null
+	
+func _check_type(type: int, mask = type_restriction) -> bool:
+	if (mask):
+		return mask & (1 << type) != 0
+	return true
