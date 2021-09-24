@@ -1,5 +1,6 @@
 {
   "BoVqkBaHQb7k7x4uEYgy": {"name": "leather", "price": 6, "type": 0, "stackable": true},
   "YAAi86AWspYOhT6boW1r": {"name": "iron sword", "price": 100, "type": 1, "stackable": false, "attack": 25, "level": 1},
-  "XiQqkxrEFJqNjY7rhz9A": {"name": "iron axe", "price": 500, "type": 2, "stackable": false, "attack": 38, "level": 1}
+  "XiQqkxrEFJqNjY7rhz9A": {"name": "iron axe", "price": 500, "type": 2, "stackable": false, "attack": 38, "level": 1},
+  "3AafJi61VL3vv0UTvnZb": {"name": "wooden bow", "price": 500, "type": 3, "stackable": false, "attack": 15, "level": 1}
 }

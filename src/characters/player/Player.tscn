@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://src/characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/player/Hero.png" type="Texture" id=2]
@@ -452,6 +452,391 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=75]
+resource_name = "Bow Attack Down"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 104, 105, 106, 107 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WeaponSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("WeaponSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.21, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawn_arrow"
+}, {
+"args": [  ],
+"method": "reset_state"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("WeaponSprite:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 270.0 ]
+}
+
+[sub_resource type="Animation" id=76]
+resource_name = "Bow Attack Left"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 96, 97, 98, 99 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WeaponSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("WeaponSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawn_arrow"
+}, {
+"args": [  ],
+"method": "reset_state"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("WeaponSprite:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=77]
+resource_name = "Bow Attack Right"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 96, 97, 98, 99 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WeaponSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("WeaponSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawn_arrow"
+}, {
+"args": [  ],
+"method": "reset_state"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("WeaponSprite:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
+
+[sub_resource type="Animation" id=78]
+resource_name = "Bow Attack Up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 112, 113, 114, 115 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WeaponSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("WeaponSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawn_arrow"
+}, {
+"args": [  ],
+"method": "reset_state"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("WeaponSprite:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("WeaponSprite:show_behind_parent")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -1439,26 +1824,28 @@ max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=34]
-animation = "Run Left"
+animation = "Bow Attack Left"
 
 [sub_resource type="AnimationNodeAnimation" id=35]
-animation = "Run Down"
+animation = "Bow Attack Down"
 
 [sub_resource type="AnimationNodeAnimation" id=36]
-animation = "Run Right"
+animation = "Bow Attack Right"
 
 [sub_resource type="AnimationNodeAnimation" id=37]
-animation = "Run Up"
+animation = "Bow Attack Up"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=38]
 blend_point_0/node = SubResource( 34 )
 blend_point_0/pos = Vector2( -1, 0 )
 blend_point_1/node = SubResource( 35 )
-blend_point_1/pos = Vector2( 0, 1 )
+blend_point_1/pos = Vector2( 0, 1.1 )
 blend_point_2/node = SubResource( 36 )
 blend_point_2/pos = Vector2( 1, 0 )
 blend_point_3/node = SubResource( 37 )
-blend_point_3/pos = Vector2( 0, -1 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=39]
@@ -1496,7 +1883,7 @@ input_3/name = "Staff"
 input_3/auto_advance = false
 
 [sub_resource type="AnimationNodeBlendTree" id=45]
-graph_offset = Vector2( -275, -271 )
+graph_offset = Vector2( -310.833, -344.667 )
 nodes/1/node = SubResource( 28 )
 nodes/1/position = Vector2( -160, -340 )
 nodes/2/node = SubResource( 33 )
@@ -1650,15 +2037,15 @@ position = Vector2( 0, -10 )
 texture = ExtResource( 2 )
 flip_h = true
 hframes = 8
-vframes = 12
-frame = 3
+vframes = 15
+frame = 2
 
 [node name="WeaponSprite" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, -7 )
 hframes = 4
 vframes = 3
-frame = 3
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -1669,6 +2056,10 @@ shape = SubResource( 1 )
 "anims/Axe Attack Left" = SubResource( 3 )
 "anims/Axe Attack Right" = SubResource( 4 )
 "anims/Axe Attack Up" = SubResource( 5 )
+"anims/Bow Attack Down" = SubResource( 75 )
+"anims/Bow Attack Left" = SubResource( 76 )
+"anims/Bow Attack Right" = SubResource( 77 )
+"anims/Bow Attack Up" = SubResource( 78 )
 "anims/Die Left" = SubResource( 6 )
 "anims/Die Right" = SubResource( 7 )
 "anims/Hurt Down" = SubResource( 8 )
@@ -1705,7 +2096,7 @@ parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 position = Vector2( 0, -8 )
-rotation = 3.14159
+rotation = 4.71239
 
 [node name="Hitbox" parent="HitboxPivot" instance=ExtResource( 3 )]
 position = Vector2( -14, 0 )
@@ -1714,6 +2105,9 @@ collision_mask = 8
 [node name="CollisionShape2D" parent="HitboxPivot/Hitbox" index="0"]
 shape = SubResource( 73 )
 disabled = true
+
+[node name="SpawnPivot" type="Position2D" parent="HitboxPivot"]
+position = Vector2( -10, 0 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -10.2453 )

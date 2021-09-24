@@ -5,6 +5,8 @@ onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var weaponSprite = $WeaponSprite
 onready var hitbox = $HitboxPivot/Hitbox
+onready var spawnPivot = $HitboxPivot/SpawnPivot
+
 
 # State machine
 enum { MOVE, ATTACK, HURT, DIE }
@@ -18,6 +20,7 @@ var velocity = Vector2.ZERO
 # Equips
 var weapon: Item setget set_weapon
 export(Resource) var equips
+var arrow = preload("res://src/items/scenes/Arrow.tscn")
 
 func _ready() -> void:
 	equips.connect("items_changed", self, "_on_equip_changed")
@@ -89,7 +92,13 @@ func set_weapon(new_weapon):
 		animationTree.set("parameters/Attack/Weapon/current", null)
 	_set_hitbox_damage()
 	
-	
+func spawn_arrow():
+	var arrow_instance = arrow.instance()
+	arrow_instance.global_position = spawnPivot.global_position
+	arrow_instance.rotation = animationTree.get("parameters/Attack/"+str(weapon.type)+"/blend_position").angle()
+	arrow_instance.damage = hitbox.damage
+	get_parent().add_child(arrow_instance)
+
 # Signals
 func _on_Player_no_hp():
 	state = DIE
