@@ -6,8 +6,11 @@ func _physics_process(delta: float) -> void:
 	var speed = 250 * delta
 	global_position += Vector2(speed,0).rotated(rotation)
 
-func _on_Arrow_area_entered(area: Area2D) -> void:
+func _on_Arrow_area_entered(_area: Area2D) -> void:
 	queue_free()
 
-func _on_Arrow_body_entered(body: Node) -> void:
+func _on_Arrow_body_entered(_body: Node) -> void:
+	queue_free()
+
+func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

@@ -12,6 +12,7 @@ func _ready() -> void:
 	inventory.add_item(Item.new("XiQqkxrEFJqNjY7rhz9A"))
 	inventory.add_item(Item.new("YAAi86AWspYOhT6boW1r"))
 	inventory.add_item(Item.new("3AafJi61VL3vv0UTvnZb"))
+	inventory.add_item(Item.new("Cqy0q6tTkMogXvratASR"))
 
 func _get_slot(index: int):
 	return get_child(index)

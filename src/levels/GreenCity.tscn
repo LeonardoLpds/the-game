@@ -93,22 +93,7 @@ position = Vector2( 48, 168 )
 
 [node name="Enemies" type="YSort" parent="YSort"]
 
-[node name="Warewolf" parent="YSort/Enemies" instance=ExtResource( 5 )]
-position = Vector2( 225.197, 76.5519 )
-
 [node name="Warewolf3" parent="YSort/Enemies" instance=ExtResource( 5 )]
 position = Vector2( 296.151, 80.0519 )
-
-[node name="Warewolf4" parent="YSort/Enemies" instance=ExtResource( 5 )]
-position = Vector2( 242.697, 120 )
-
-[node name="Warewolf5" parent="YSort/Enemies" instance=ExtResource( 5 )]
-position = Vector2( 208, 32 )
-
-[node name="Warewolf6" parent="YSort/Enemies" instance=ExtResource( 5 )]
-position = Vector2( 216, 162.596 )
-
-[node name="Warewolf2" parent="YSort/Enemies" instance=ExtResource( 5 )]
-position = Vector2( 278.651, 170.096 )
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]

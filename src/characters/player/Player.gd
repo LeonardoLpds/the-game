@@ -21,6 +21,7 @@ var velocity = Vector2.ZERO
 var weapon: Item setget set_weapon
 export(Resource) var equips
 var arrow = preload("res://src/items/scenes/Arrow.tscn")
+var energy = preload("res://src/items/scenes/Energy Ball.tscn")
 
 func _ready() -> void:
 	equips.connect("items_changed", self, "_on_equip_changed")
@@ -67,6 +68,7 @@ func move_state():
 
 func attack_state():
 	velocity = Vector2.ZERO
+	animationTree.tree_root.get_node("Attack").set_start_node(str(weapon.type))
 	animationState.travel("Attack")
 	
 func reset_state():
@@ -85,19 +87,35 @@ func die_state():
 func set_weapon(new_weapon):
 	weapon = new_weapon
 	if (weapon is Item):
-		weaponSprite.set_texture(weapon.animation)
-		animationTree.set("parameters/Attack/Weapon/current", weapon.type - 1)
-	else:
-		weaponSprite.texture = null
-		animationTree.set("parameters/Attack/Weapon/current", null)
+		weaponSprite.frame = 0
+		if (weapon.animation != null):
+			weaponSprite.set_texture(weapon.animation)
+			_animation_weapon()
+		else:
+			weaponSprite.set_texture(weapon.texture)
+			_no_animation_weapon()
+
 	_set_hitbox_damage()
 	
+func _no_animation_weapon():
+	weaponSprite.hframes = 1
+	weaponSprite.vframes = 1
+
+func _animation_weapon():
+	weaponSprite.hframes = 4
+	weaponSprite.vframes = 3
+	
+func spawn_projectile(projectile):
+	projectile.global_position = spawnPivot.global_position
+	projectile.rotation = animationTree.get("parameters/Attack/"+str(weapon.type)+"/blend_position").angle()
+	projectile.damage = hitbox.damage
+	get_parent().add_child(projectile)
+	
 func spawn_arrow():
-	var arrow_instance = arrow.instance()
-	arrow_instance.global_position = spawnPivot.global_position
-	arrow_instance.rotation = animationTree.get("parameters/Attack/"+str(weapon.type)+"/blend_position").angle()
-	arrow_instance.damage = hitbox.damage
-	get_parent().add_child(arrow_instance)
+	spawn_projectile(arrow.instance())
+	
+func spawn_energy():
+	spawn_projectile(energy.instance())
 
 # Signals
 func _on_Player_no_hp():
