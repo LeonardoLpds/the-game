@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/ui/iventory/BaseInventory.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://src/characters/Character.gd"
+}, {
 "base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
@@ -23,11 +28,30 @@ _global_script_classes=[ {
 "class": "Item",
 "language": "GDScript",
 "path": "res://src/items/Item.gd"
+}, {
+"base": "Resource",
+"class": "Skill",
+"language": "GDScript",
+"path": "res://src/skills/Skill.gd"
+}, {
+"base": "Resource",
+"class": "SkillBag",
+"language": "GDScript",
+"path": "res://src/skills/SkillBag.gd"
+}, {
+"base": "Node2D",
+"class": "SkillScene",
+"language": "GDScript",
+"path": "res://src/skills/scenes/SkillScene.gd"
 } ]
 _global_script_class_icons={
 "BaseInventory": "",
+"Character": "",
 "Inventory": "",
-"Item": ""
+"Item": "",
+"Skill": "",
+"SkillBag": "",
+"SkillScene": ""
 }
 
 [application]
@@ -40,6 +64,7 @@ config/icon="res://icon.png"
 
 Steering="*res://src/autoload/Steering.gd"
 ItemsData="*res://src/autoload/ItemsData.gd"
+SkillsData="*res://src/autoload/SkillsData.gd"
 
 [display]
 
@@ -49,6 +74,11 @@ window/size/test_width=1152
 window/size/test_height=648
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[global]
+
+touch=false
+asdf=false
 
 [importer_defaults]
 
@@ -121,6 +151,15 @@ ui_left_click={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+skill_1={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":49,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 

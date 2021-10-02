@@ -1,0 +1,13 @@
+{
+  "ogrUp9dLVLW4DpI1R8hS": {
+    "base_cast_time": 1,
+    "base_damage": 10,
+    "base_sp_cost": 5,
+    "description": "teste",
+    "max_level": 10,
+    "name": "fire ball",
+    "player_level_require": 1,
+    "skill_requirements": [],
+    "weapon_type": 4
+  }
+}

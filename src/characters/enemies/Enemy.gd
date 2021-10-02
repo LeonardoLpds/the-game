@@ -1,4 +1,4 @@
-extends "res://src/characters/Character.gd"
+extends Character
 
 onready var playerDetection = $PlayerDetectionZone
 onready var wanderController = $WanderController
@@ -14,6 +14,7 @@ export var walk_speed := 70
 export var acceleration := 5
 
 var velocity := Vector2.ZERO
+
 
 # State Machine
 enum {IDLE, WANDER, CHASE, ATTACK, HURT, DIE}
@@ -77,6 +78,8 @@ func chase_state():
 func hurt_state():
 	velocity = velocity.move_toward(Vector2.ZERO, acceleration)
 	animationPlayer.play("Hurt")
+	if !playerDetection.is_player_in_range():
+		playerDetection.increase_radius(300)
 
 func die_state():
 	set_physics_process(false)
@@ -92,6 +95,7 @@ func die_state():
 	
 	
 func attack_state():
+	playerDetection.reset_radius()
 	velocity = velocity.move_toward(Vector2.ZERO, acceleration)
 	animationPlayer.play("Attack")
 

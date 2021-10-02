@@ -19,13 +19,10 @@ func _init(item_id = null):
 		return
 	if item_id in ItemsData.items:
 		var item = ItemsData.items[item_id]
-		id = item_id
-		name = item.name
-		price = item.price
-		type = item.type
-		stackable = item.stackable
-		attack = item.attack if "attack" in item else 0
-		level = item.attack if "level" in item else 0
+		for key in item:
+			self[key] = item[key]
+
+		
 
 		texture = load("res://assets/art/items/"+ ItemsData.items[item_id].name +".png")
 		if File.new().file_exists("res://assets/art/items/"+ ItemsData.items[item_id].name +" animation.png"):

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/backpack.png-a7ee073dbb7c6b29c2adb4faf1a26f4b.stex"
+path="res://.import/fire ball.png-adf5673390a2707a4e68076ba4dc34a3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/ui/backpack.png"
-dest_files=[ "res://.import/backpack.png-a7ee073dbb7c6b29c2adb4faf1a26f4b.stex" ]
+source_file="res://assets/art/skills/fire ball.png"
+dest_files=[ "res://.import/fire ball.png-adf5673390a2707a4e68076ba4dc34a3.stex" ]
 
 [params]
 

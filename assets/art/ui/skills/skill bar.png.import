@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/backpack_slot.png-e96fa4c62ee0948e5529b3197273d517.stex"
+path="res://.import/skill bar.png-9eb0ca10c1e72193c352ea3c33e39125.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/ui/backpack_slot.png"
-dest_files=[ "res://.import/backpack_slot.png-e96fa4c62ee0948e5529b3197273d517.stex" ]
+source_file="res://assets/art/ui/skills/skill bar.png"
+dest_files=[ "res://.import/skill bar.png-9eb0ca10c1e72193c352ea3c33e39125.stex" ]
 
 [params]
 
