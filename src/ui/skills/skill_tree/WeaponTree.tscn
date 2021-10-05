@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://src/ui/skills/skill_tree/WeaponTree.gd" type="Script" id=2]
+[gd_scene format=2]
 
 [node name="WeaponTree" type="VBoxContainer"]
 anchor_left = 0.5
@@ -20,7 +18,6 @@ size_flags_horizontal = 4
 custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 columns = 3
-script = ExtResource( 2 )
 
 [node name="Base" type="CenterContainer" parent="."]
 margin_top = 216.0

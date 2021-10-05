@@ -19,10 +19,9 @@ func _init(item_id = null):
 		return
 	if item_id in ItemsData.items:
 		var item = ItemsData.items[item_id]
+		id = item_id
 		for key in item:
 			self[key] = item[key]
-
-		
 
 		texture = load("res://assets/art/items/"+ ItemsData.items[item_id].name +".png")
 		if File.new().file_exists("res://assets/art/items/"+ ItemsData.items[item_id].name +" animation.png"):

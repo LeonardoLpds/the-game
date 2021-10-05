@@ -25,11 +25,11 @@ var energy = preload("res://src/items/scenes/Energy Ball.tscn")
 
 # Skills
 export(Resource) var skills
+export(int) var skill_points
 
 func _ready() -> void:
 	equips.connect("items_changed", self, "_on_equip_changed")
-	skills.skills.push_front(Skill.new('ogrUp9dLVLW4DpI1R8hS'))
-	skills.skills[0].shortcut = "skill_1"
+	skills.skills.push_front(Skill.new("04v7srbGaFW6loEvRpzW"))
 
 func _physics_process(_delta):
 	match state:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/art/skills/skill up.png" type="Texture" id=1]
 [ext_resource path="res://assets/art/skills/skill conector over side.png" type="Texture" id=2]
@@ -7,10 +7,14 @@
 [ext_resource path="res://assets/art/skills/skill conector under.png" type="Texture" id=5]
 [ext_resource path="res://assets/art/skills/skill conector over.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/skills/skill conector progress.png" type="Texture" id=7]
+[ext_resource path="res://src/ui/skills/skill_tree/SkillIcon.gd" type="Script" id=8]
 
-[node name="SkillIcon" type="CenterContainer"]
+[node name="SkillIcon" type="CenterContainer" groups=[
+"skill_icon",
+]]
 margin_right = 16.0
 margin_bottom = 16.0
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

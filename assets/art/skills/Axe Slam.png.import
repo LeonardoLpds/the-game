@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fire ball.png-adf5673390a2707a4e68076ba4dc34a3.stex"
+path="res://.import/Axe Slam.png-2c19692f6b297dd3f6e8e2e183f24fcf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/skills/fire ball.png"
-dest_files=[ "res://.import/fire ball.png-adf5673390a2707a4e68076ba4dc34a3.stex" ]
+source_file="res://assets/art/skills/Axe Slam.png"
+dest_files=[ "res://.import/Axe Slam.png-2c19692f6b297dd3f6e8e2e183f24fcf.stex" ]
 
 [params]
 

@@ -1,13 +1,22 @@
 {
   "ogrUp9dLVLW4DpI1R8hS": {
-    "base_cast_time": 1,
-    "base_damage": 10,
-    "base_sp_cost": 5,
-    "description": "teste",
+    "base_damage": 100,
+    "base_sp_cost": 25,
+    "description": "Shoots a fire ball",
     "max_level": 10,
-    "name": "fire ball",
-    "player_level_require": 1,
-    "skill_requirements": [],
+    "name": "Fire Ball",
+    "player_level_required": 1,
+    "skills_required": [],
     "weapon_type": 4
+  },
+  "04v7srbGaFW6loEvRpzW": {
+    "base_damage": 120,
+    "base_sp_cost": 12,
+    "description": "Jump into the air and slam your axe on the ground when fall",
+    "max_level": 10,
+    "name": "Axe Slam",
+    "player_level_required": 1,
+    "skills_required": [],
+    "weapon_type": 2
   }
 }

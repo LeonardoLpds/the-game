@@ -72,6 +72,7 @@ position = Vector2( 88, 88 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 73.7658, 105.498 )
+skill_points = 2
 
 [node name="Grass" type="YSort" parent="YSort"]
 
