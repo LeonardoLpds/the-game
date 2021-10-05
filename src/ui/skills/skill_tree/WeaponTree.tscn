@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/ui/skills/skill_tree/WeaponTree.gd" type="Script" id=2]
+
+[node name="WeaponTree" type="VBoxContainer"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skills" type="GridContainer" parent="."]
+margin_top = 216.0
+margin_bottom = 216.0
+size_flags_horizontal = 4
+custom_constants/vseparation = 10
+custom_constants/hseparation = 10
+columns = 3
+script = ExtResource( 2 )
+
+[node name="Base" type="CenterContainer" parent="."]
+margin_top = 216.0
+margin_bottom = 216.0
+
+[node name="WeaponTexture" type="TextureRect" parent="Base"]

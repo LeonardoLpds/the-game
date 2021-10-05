@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/art/skills/skill up.png" type="Texture" id=1]
+[ext_resource path="res://assets/art/skills/skill conector over side.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/skills/skill conector progress side.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/skills/skill conector under side.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/skills/skill conector under.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/skills/skill conector over.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/skills/skill conector progress.png" type="Texture" id=7]
+
+[node name="SkillIcon" type="CenterContainer"]
+margin_right = 16.0
+margin_bottom = 16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Conectors" type="Control" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 8.0
+margin_bottom = 8.0
+
+[node name="RightConector" type="TextureProgress" parent="Conectors"]
+visible = false
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 8.0
+margin_top = -8.0
+margin_right = 18.0
+margin_bottom = 8.0
+texture_under = ExtResource( 4 )
+texture_over = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftConector" type="TextureProgress" parent="Conectors"]
+visible = false
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -18.0
+margin_top = -8.0
+margin_right = -8.0
+margin_bottom = 8.0
+texture_under = ExtResource( 4 )
+texture_over = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+fill_mode = 1
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpConector" type="TextureProgress" parent="Conectors"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.0
+margin_top = -18.0
+margin_right = 8.0
+margin_bottom = -8.0
+texture_under = ExtResource( 5 )
+texture_over = ExtResource( 6 )
+texture_progress = ExtResource( 7 )
+fill_mode = 3
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkillTexture" type="TextureRect" parent="."]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+
+[node name="SkillUp" type="Control" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 8.0
+margin_bottom = 8.0
+
+[node name="Arrow" type="TextureRect" parent="SkillUp"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -9.0
+margin_right = 9.0
+margin_bottom = -3.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

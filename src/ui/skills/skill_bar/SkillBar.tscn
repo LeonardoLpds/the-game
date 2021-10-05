@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/art/ui/skills/skill bar.png" type="Texture" id=1]
-[ext_resource path="res://src/ui/skills/SkillSlot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/ui/skills/skill_bar/SkillSlot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/art/ui/skills/skill bar.png" type="Texture" id=2]
 
 [node name="SkillBar" type="MarginContainer"]
 anchor_left = 1.0
@@ -23,7 +23,7 @@ margin_left = 2.0
 margin_top = 2.0
 margin_right = 120.0
 margin_bottom = 32.0
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
@@ -43,48 +43,43 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/MarginContainer"]
 margin_right = 108.0
-margin_bottom = 20.0
+margin_bottom = 19.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SkillSlot1" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="SkillSlot1" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 1.0
 margin_right = 19.0
-margin_bottom = 20.0
 
 [node name="Button" parent="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot1/Control" index="0"]
 text = "1"
 
-[node name="SkillSlot2" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="SkillSlot2" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 23.0
 margin_right = 41.0
-margin_bottom = 20.0
 
 [node name="Button" parent="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot2/Control" index="0"]
 text = "2"
 
-[node name="SkillSlot3" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="SkillSlot3" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 45.0
 margin_right = 63.0
-margin_bottom = 20.0
 
 [node name="Button" parent="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot3/Control" index="0"]
 text = "3"
 
-[node name="SkillSlot4" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="SkillSlot4" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 67.0
 margin_right = 85.0
-margin_bottom = 20.0
 
 [node name="Button" parent="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot4/Control" index="0"]
 text = "4"
 
-[node name="SkillSlot5" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="SkillSlot5" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 89.0
 margin_right = 107.0
-margin_bottom = 20.0
 
 [node name="Button" parent="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot5/Control" index="0"]
 text = "5"
