@@ -4,7 +4,7 @@ const MAX_SPEED := 70.0
 var mass := 10.0
 var num_rays := 8
 
-const RAYS := []
+var RAYS := []
 
 func _ready():
 	RAYS.resize(num_rays)
@@ -27,8 +27,8 @@ func seek(
 	set_direction_score(desired_direction, max_speed, current_position, ignore_collider)
 	
 	var chosen_direction = Vector2.ZERO
-	for i in num_rays:
-		chosen_direction += RAYS[i].direction * RAYS[i].score
+	for ray in RAYS:
+		chosen_direction += ray.direction * ray.score
 		
 	var desired_velocity = chosen_direction.normalized() * max_speed
 	var steering = (desired_velocity - velocity) / mass
@@ -38,13 +38,13 @@ func set_direction_score(desired_direction: Vector2, max_speed: float, current_p
 	var look_ahead = max_speed / 4
 	var space_state = get_world_2d().direct_space_state
 
-	for i in num_rays:
-		RAYS[i].score = max(0, RAYS[i].direction.dot(desired_direction))
+	for ray in RAYS:
+		ray.score = max(0, ray.direction.dot(desired_direction))
 		
 		var collision = space_state.intersect_ray(
-			current_position, current_position + RAYS[i].direction * look_ahead,
+			current_position, current_position + ray.direction * look_ahead,
 			ignore_collider
 		)
 		if !collision.empty():
 			var collision_dot_product = collision.position.normalized().dot(current_position.normalized())
-			RAYS[i].score = max(0, RAYS[i].score - collision_dot_product)
+			ray.score = max(0, ray.score - collision_dot_product)

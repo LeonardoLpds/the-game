@@ -25,11 +25,11 @@ var energy = preload("res://src/items/scenes/Energy Ball.tscn")
 
 # Skills
 export(Resource) var skills
-export(int) var skill_points
+export(int) var skill_points setget _set_skill_points
+signal skill_points_changed
 
 func _ready() -> void:
 	equips.connect("items_changed", self, "_on_equip_changed")
-	skills.skills.push_front(Skill.new("04v7srbGaFW6loEvRpzW"))
 
 func _physics_process(_delta):
 	match state:
@@ -127,6 +127,14 @@ func spawn_arrow():
 	
 func spawn_energy():
 	spawn_projectile(energy.instance())
+	
+func spend_skill_points(amount: int = 1) -> void:
+	self.skill_points -= amount
+
+func _set_skill_points(amount: int) -> void:
+	skill_points = amount
+	emit_signal("skill_points_changed", skill_points)
+	
 
 # Signals
 func _on_equip_changed(indexes: Array) -> void:
