@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/fonts/default_normal.tres" type="DynamicFont" id=1]
 [ext_resource path="res://src/ui/skills/skill_bar/SkillSlot.gd" type="Script" id=2]
 [ext_resource path="res://assets/art/ui/invetory/backpack_slot.png" type="Texture" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9, 9 )
 
 [node name="SkillSlot" type="CenterContainer"]
 margin_right = 18.0
@@ -14,10 +11,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-shape = SubResource( 1 )
-action = "skill_1"
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 18.0
@@ -36,7 +29,7 @@ margin_top = 9.0
 margin_right = 9.0
 margin_bottom = 9.0
 
-[node name="Button" type="Label" parent="Control"]
+[node name="Key" type="Label" parent="Control"]
 margin_left = -8.0
 margin_top = 3.0
 margin_right = 8.0

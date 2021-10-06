@@ -20,13 +20,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Conectors" type="Control" parent="."]
+[node name="Connectors" type="Control" parent="."]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 8.0
 margin_bottom = 8.0
 
-[node name="RightConector" type="TextureProgress" parent="Conectors"]
+[node name="RightConnector" type="TextureProgress" parent="Connectors"]
 visible = false
 anchor_top = 0.5
 anchor_right = 1.0
@@ -47,7 +47,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LeftConector" type="TextureProgress" parent="Conectors"]
+[node name="LeftConnector" type="TextureProgress" parent="Connectors"]
 visible = false
 anchor_top = 0.5
 anchor_right = 1.0
@@ -69,7 +69,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UpConector" type="TextureProgress" parent="Conectors"]
+[node name="UpConnector" type="TextureProgress" parent="Connectors"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5

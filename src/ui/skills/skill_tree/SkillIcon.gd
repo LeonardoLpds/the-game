@@ -1,10 +1,13 @@
 extends CenterContainer
 
+export(int, "Not Connected", "Connect Left", "Connect Right", "Connect Up") var connector
+
 export(String) var skill_id: String
 
 onready var skill_button = $SkillButton
 onready var skill_up = $SkillUp/Arrow
 onready var level_label = $SkillLevel/Level
+onready var connectors = [$Connectors/LeftConnector, $Connectors/RightConnector, $Connectors/UpConnector]
 
 var skill : Skill
 
@@ -14,8 +17,12 @@ func _ready() -> void:
 	if (skill_id):
 		skill = Skill.new(skill_id)
 		skill_button.texture_normal = skill.texture
+	if (connector):
+		connectors[connector - 1].visible = true
 
 func enable_level_up() -> void:
+	if skill == null:
+		return
 	skill_up.visible = true
 	skill_button.disabled = false
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/ui/skills/skill_tree/WeaponTree.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/ui/skills/skill bar.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/items/iron axe.png" type="Texture" id=3]
 [ext_resource path="res://src/ui/skills/skill_tree/SkillIcon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/ui/skills/skill_bar/SkillBar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/fonts/default_normal.tres" type="DynamicFont" id=6]
 [ext_resource path="res://assets/art/items/iron sword.png" type="Texture" id=7]
 [ext_resource path="res://assets/art/items/wooden staff.png" type="Texture" id=8]
@@ -17,9 +18,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -140.0
-margin_top = -96.5
+margin_top = -87.5
 margin_right = 140.0
-margin_bottom = 96.5
+margin_bottom = 87.5
 texture = ExtResource( 2 )
 patch_margin_left = 4
 patch_margin_top = 4
@@ -31,8 +32,10 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -116.0
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -45,13 +48,13 @@ __meta__ = {
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 270.0
-margin_bottom = 183.0
+margin_bottom = 106.0
+size_flags_vertical = 8
 alignment = 2
 
 [node name="Trees" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 100.0
 margin_right = 260.0
-margin_bottom = 158.0
+margin_bottom = 58.0
 alignment = 1
 
 [node name="AxeTree" parent="MarginContainer/VBoxContainer/Trees" instance=ExtResource( 1 )]
@@ -89,9 +92,6 @@ margin_left = 26.0
 margin_top = 26.0
 margin_right = 42.0
 margin_bottom = 42.0
-
-[node name="UpConector" parent="MarginContainer/VBoxContainer/Trees/AxeTree/Skills/BloodSacrifice/Conectors" index="2"]
-visible = true
 
 [node name="AxeAgi" parent="MarginContainer/VBoxContainer/Trees/AxeTree/Skills" index="5" instance=ExtResource( 4 )]
 margin_left = 52.0
@@ -186,29 +186,30 @@ margin_bottom = 16.0
 texture = ExtResource( 8 )
 
 [node name="Details" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 162.0
+margin_top = 62.0
 margin_right = 260.0
-margin_bottom = 173.0
+margin_bottom = 96.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Details"]
 margin_right = 54.0
-margin_bottom = 11.0
+margin_bottom = 34.0
 custom_constants/separation = 0
 alignment = 1
 
 [node name="PointsNumber" type="Label" parent="MarginContainer/VBoxContainer/Details/VBoxContainer"]
+margin_top = 11.0
 margin_right = 54.0
-margin_bottom = 7.0
+margin_bottom = 18.0
 custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 0.988235, 0.239216, 1 )
-text = "5"
+text = "0"
 align = 1
 valign = 1
 
 [node name="PointsLabel" type="Label" parent="MarginContainer/VBoxContainer/Details/VBoxContainer"]
-margin_top = 7.0
+margin_top = 18.0
 margin_right = 54.0
-margin_bottom = 11.0
+margin_bottom = 22.0
 custom_fonts/font = ExtResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 0.784314 )
 text = "Pontos disponiveis"
@@ -216,15 +217,30 @@ valign = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Details"]
 margin_left = 58.0
-margin_right = 260.0
-margin_bottom = 11.0
+margin_right = 134.0
+margin_bottom = 34.0
 size_flags_horizontal = 3
 
+[node name="SkillBar" parent="MarginContainer/VBoxContainer/Details" instance=ExtResource( 5 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 138.0
+margin_top = 0.0
+margin_right = 260.0
+margin_bottom = 34.0
+
+[node name="NinePatchRect" parent="MarginContainer/VBoxContainer/Details/SkillBar" index="0"]
+texture = null
+
 [editable path="MarginContainer/VBoxContainer/Trees/AxeTree"]
-[editable path="MarginContainer/VBoxContainer/Trees/AxeTree/Skills/Berserker"]
-[editable path="MarginContainer/VBoxContainer/Trees/AxeTree/Skills/AxeSlam"]
-[editable path="MarginContainer/VBoxContainer/Trees/AxeTree/Skills/BloodSacrifice"]
-[editable path="MarginContainer/VBoxContainer/Trees/AxeTree/Skills/AxeAgi"]
 [editable path="MarginContainer/VBoxContainer/Trees/SwordTree"]
 [editable path="MarginContainer/VBoxContainer/Trees/BowTree"]
 [editable path="MarginContainer/VBoxContainer/Trees/StaffTree"]
+[editable path="MarginContainer/VBoxContainer/Details/SkillBar"]
+[editable path="MarginContainer/VBoxContainer/Details/SkillBar/NinePatchRect/MarginContainer/HBoxContainer/SkillSlot1"]
+[editable path="MarginContainer/VBoxContainer/Details/SkillBar/NinePatchRect/MarginContainer/HBoxContainer/SkillSlot2"]
+[editable path="MarginContainer/VBoxContainer/Details/SkillBar/NinePatchRect/MarginContainer/HBoxContainer/SkillSlot3"]
+[editable path="MarginContainer/VBoxContainer/Details/SkillBar/NinePatchRect/MarginContainer/HBoxContainer/SkillSlot4"]
+[editable path="MarginContainer/VBoxContainer/Details/SkillBar/NinePatchRect/MarginContainer/HBoxContainer/SkillSlot5"]
