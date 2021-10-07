@@ -53,40 +53,20 @@ __meta__ = {
 [node name="SkillSlot1" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 1.0
 margin_right = 19.0
-
-[node name="Key" parent="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot1/Control" index="0"]
-text = "1"
+action = "skill_1"
 
 [node name="SkillSlot2" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 23.0
 margin_right = 41.0
 
-[node name="Key" parent="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot2/Control" index="0"]
-text = "2"
-
 [node name="SkillSlot3" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 45.0
 margin_right = 63.0
-
-[node name="Key" parent="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot3/Control" index="0"]
-text = "3"
 
 [node name="SkillSlot4" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 67.0
 margin_right = 85.0
 
-[node name="Key" parent="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot4/Control" index="0"]
-text = "4"
-
 [node name="SkillSlot5" parent="NinePatchRect/MarginContainer/HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 89.0
 margin_right = 107.0
-
-[node name="Key" parent="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot5/Control" index="0"]
-text = "5"
-
-[editable path="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot1"]
-[editable path="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot2"]
-[editable path="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot3"]
-[editable path="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot4"]
-[editable path="NinePatchRect/MarginContainer/HBoxContainer/SkillSlot5"]

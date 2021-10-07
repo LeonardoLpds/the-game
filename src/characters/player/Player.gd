@@ -91,8 +91,7 @@ func die_state():
 	animationState.travel("Die")
 	
 func skill_state():
-	print("SKILL STATE")
-	reset_state()
+	pass
 
 # Helpers
 func set_weapon(new_weapon):

@@ -32,6 +32,14 @@ func disable_level_up() -> void:
 
 func set_level(level: String) -> void:
 	level_label.text = level
+	
+func get_drag_data(_position: Vector2) -> Skill:
+	if skill is Skill and skill.level > 0:
+		var drag_preview = TextureRect.new()
+		drag_preview.texture = skill_button.texture_normal
+		set_drag_preview(drag_preview)
+		return skill
+	return null
 
 func _on_SkillButton_pressed() -> void:
 	emit_signal("point_added", skill, self)

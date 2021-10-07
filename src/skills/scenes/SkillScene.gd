@@ -7,4 +7,4 @@ var resource: Skill
 var sp_cost setget ,get_sp
 
 func get_sp() -> int:
-	return int(floor(resource.base_sp_cost * (1 + resource.level * 0.01)))
+	return resource.base_sp_cost + resource.level

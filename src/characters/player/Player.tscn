@@ -8,7 +8,7 @@
 [ext_resource path="res://src/characters/player/PlayerEquips.tres" type="Resource" id=6]
 [ext_resource path="res://src/characters/player/Camera2D.gd" type="Script" id=7]
 [ext_resource path="res://src/skills/SkillCaster.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/characters/player/SkillBag.tres" type="Resource" id=9]
+[ext_resource path="res://src/characters/player/PlayerSkills.tres" type="Resource" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
@@ -2496,8 +2496,11 @@ height = 12.0449
 ]]
 collision_layer = 2
 script = ExtResource( 1 )
+lvl = 99
+inte = 200
 equips = ExtResource( 6 )
 skills = ExtResource( 9 )
+skill_points = 15
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 1 )
