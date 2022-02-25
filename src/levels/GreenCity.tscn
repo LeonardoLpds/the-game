@@ -57,9 +57,7 @@
 
 [node name="GreenCity" type="Node2D"]
 
-[node name="Ground" type="TileMap" parent="." groups=[
-"tilemap",
-]]
+[node name="Ground" type="TileMap" parent="." groups=["tilemap"]]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
